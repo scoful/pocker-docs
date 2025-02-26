@@ -1,15 +1,15 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "index": "项目介绍",
+  "quickStart": "快速开始",
+  "Q&A": "Q&A",
   "about": {
-    "title": "About",
+    "title": "其他作品",
     "type": "page"
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "联系作者 ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://github.com/scoful",
     "newWindow": true
   }
 }

@@ -1,22 +1,18 @@
 {
-  "name": "nextra-docs-template",
+  "name": "Pocker-docs",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "Pocker 的使用介绍文档",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
-  },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "scoful",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/scoful/pocker-docs/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://github.com/scoful/pocker-docs",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",
