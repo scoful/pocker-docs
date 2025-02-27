@@ -1,27 +1,27 @@
 import Image from 'next/image';
 
 ## 获取环境变量
-- 一共有6个，都是必须的
-- 下面会有具体的截图步骤，建议擅用Ctrl+f搜索页面关键词来定位位置
-- 如有疑问，请提 [Issue](https://github.com/scoful/pocker/issues/new)
-- 完整环境变量例子如下：
+- 本项目需要配置6个必需的环境变量
+- 下方提供了详细的配置截图教程，如果找不到截图里的信息，可使用Ctrl+F快速定位关键信息
+- 遇到任何问题欢迎在 [GitHub Issues](https://github.com/scoful/pocker/issues/new) 中反馈
+- 环境变量配置示例：
 ```
 ACCESS_KEY=your-secret-key # 系统登陆密钥
 Region=ap-guangzhou # 地域选择，访问后面链接获取，建议广州
-TENCENTCLOUD_SECRET_ID=xxx # 腾讯密钥id
-TENCENTCLOUD_SECRET_KEY=xxx # 腾讯密钥key
-GITHUB_TOKEN=xxx # github的token
+TENCENTCLOUD_SECRET_ID=xxx # 腾讯密钥 id
+TENCENTCLOUD_SECRET_KEY=xxx # 腾讯密钥 key
+GITHUB_TOKEN=xxx # github 的 token
 TENCENTCLOUD_PASSWORD=xxx # 腾讯云容器镜像服务密码
 ```
 ### ACCESS_KEY
 - 系统登录凭证，请设置一个安全的密钥值，用于系统身份验证和访问控制(也就是登陆密码)
 ### Region
-- 地域值，建议直接填：**ap-guangzhou**，也就是广州，按官方文档说明，有500个仓库额度，是最多的。
+- 地域值，推荐使用 **ap-guangzhou**（广州）。该地域提供最大的仓库配额，可创建高达500个镜像仓库，能满足绝大多数使用场景。
 - 其他值可查 [地域列表](https://cloud.tencent.com/document/api/1141/41562#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
 - 资源配额具体限制可查 [资源配额](https://cloud.tencent.com/document/product/1141/57780)
 ### TENCENTCLOUD_SECRET_ID
 - 访问[腾讯云控制台](https://console.cloud.tencent.com/cam)创建并获取SecretId，**_注意：创建时只需授予 QcloudTCRFullAccess 权限即可_**
-- **_注：SecretId和SecretKey创建后，立刻找地方保存，如果错过保存，重新创建获取。_**
+- **_注：SecretId 和 SecretKey 创建后，立刻找地方保存，如果错过保存，重新创建获取。_**
 #### 过程截图
 <div style={{ marginBottom: '20px' }}>
   <p>过程一</p>
@@ -56,7 +56,7 @@ TENCENTCLOUD_PASSWORD=xxx # 腾讯云容器镜像服务密码
   <Image src="/tencentSecret/8.png" alt="Step 8" width={600} height={400} />
 </div>
 ### TENCENTCLOUD_SECRET_KEY
-- **_注意：与上面SecretId配套使用，同样只需授予 QcloudTCRFullAccess 权限_**
+- **_注意：与上面 SecretId 配套使用，同样只需授予 QcloudTCRFullAccess 权限_**
 ### TENCENTCLOUD_PASSWORD
 - 访问[腾讯云容器镜像服务](https://console.cloud.tencent.com/tcr)控制台，填写您在初始化容器镜像服务时设置的登录密码。
 #### 过程截图

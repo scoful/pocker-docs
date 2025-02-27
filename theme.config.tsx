@@ -6,7 +6,7 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/scoful/pocker',
   },
-  docsRepositoryBase: 'https://github.com/scoful/pocker-docs',
+  docsRepositoryBase: 'https://github.com/scoful/pocker-docs/blob/main',
   footer: {
     text: 'Pocker - 让每个人都有自己的 Docker 私服，Make Docker Great Again -  ❤ by scoful',
   },
