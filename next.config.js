@@ -3,4 +3,8 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.tsx',
 })
 
-module.exports = withNextra()
+module.exports = withNextra({
+  images: {
+    domains: ['scoful-picgo.oss-ap-southeast-1.aliyuncs.com']
+  }
+})
