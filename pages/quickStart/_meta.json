@@ -1,5 +1,6 @@
 {
   "stepOne": "第一步：一键部署",
   "stepTwo": "第二步：获取和配置环境变量",
-  "stepThree": "第三步：初始化项目"
+  "stepThree": "第三步：初始化项目",
+  "howToUpdate": "如何自动更新？"
 }
