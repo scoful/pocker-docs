@@ -6,84 +6,16 @@ import Image from 'next/image';
 - 遇到任何问题欢迎在 [GitHub Issues](https://github.com/scoful/pocker/issues/new) 中反馈
 - 环境变量配置示例：
 ```
-ACCESS_KEY=your-secret-key # 系统登陆密钥
-Region=ap-guangzhou # 地域选择，访问后面链接获取，建议广州
-TENCENTCLOUD_SECRET_ID=xxx # 腾讯密钥 id
-TENCENTCLOUD_SECRET_KEY=xxx # 腾讯密钥 key
-GITHUB_TOKEN=xxx # github 的 token
-TENCENTCLOUD_PASSWORD=xxx # 腾讯云容器镜像服务密码
+ACCESS_KEY=xxxxxx # 系统登陆密钥
+GITHUB_TOKEN=xxxxxx # github 的 token
+HUAWEICLOUD_AK=xxxxxx # 华为云 ak
+HUAWEICLOUD_SK=xxxxxx # 华为云 sk
+NEXT_PUBLIC_HUAWEICLOUD_USERNAME=xxxxxx # 华为云容器镜像服务 SWR 登陆用户名
+HUAWEICLOUD_PASSWORD=xxxxxx # 华为云容器镜像服务 SWR 登陆密码
+
 ```
 ### ACCESS_KEY
 - 系统登录凭证，请设置一个安全的密钥值，用于系统身份验证和访问控制(也就是登陆密码)
-### Region
-- 地域值，推荐使用 **ap-guangzhou**（广州）。该地域提供最大的仓库配额，可创建高达500个镜像仓库，能满足绝大多数使用场景。
-- 其他值可查 [地域列表](https://cloud.tencent.com/document/api/1141/41562#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
-- 资源配额具体限制可查 [资源配额](https://cloud.tencent.com/document/product/1141/57780)
-### TENCENTCLOUD_SECRET_ID
-- 访问[腾讯云控制台](https://console.cloud.tencent.com/cam)创建并获取SecretId，**_注意：创建时只需授予 QcloudTCRFullAccess 权限即可_**
-- **_注：SecretId 和 SecretKey 创建后，立刻找地方保存，如果错过保存，重新创建获取。_**
-#### 过程截图
-<div style={{ marginBottom: '20px' }}>
-  <p>过程一</p>
-  <Image src="/tencentSecret/1.png" alt="Step 1" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程二</p>
-  <Image src="/tencentSecret/2.png" alt="Step 2" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程三</p>
-  <Image src="/tencentSecret/3.png" alt="Step 3" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程四</p>
-  <Image src="/tencentSecret/4.png" alt="Step 4" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程五</p>
-  <Image src="/tencentSecret/5.png" alt="Step 5" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程六</p>
-  <Image src="/tencentSecret/6.png" alt="Step 6" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程七</p>
-  <Image src="/tencentSecret/7.png" alt="Step 7" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程八</p>
-  <Image src="/tencentSecret/8.png" alt="Step 8" width={600} height={400} />
-</div>
-### TENCENTCLOUD_SECRET_KEY
-- **_注意：与上面 SecretId 配套使用，同样只需授予 QcloudTCRFullAccess 权限_**
-### TENCENTCLOUD_PASSWORD
-- 访问[腾讯云容器镜像服务](https://console.cloud.tencent.com/tcr)控制台，填写您在初始化容器镜像服务时设置的登录密码。
-#### 过程截图
-<div style={{ marginBottom: '20px' }}>
-  <p>过程一</p>
-  <Image src="/tencentDocker/1.png" alt="Step 1" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程二</p>
-  <Image src="/tencentDocker/2.png" alt="Step 2" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程三</p>
-  <Image src="/tencentDocker/3.png" alt="Step 3" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程四</p>
-  <Image src="/tencentDocker/4.png" alt="Step 4" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程五</p>
-  <Image src="/tencentDocker/5.png" alt="Step 5" width={600} height={400} />
-</div>
-<div style={{ marginBottom: '20px' }}>
-  <p>过程六</p>
-  <Image src="/tencentDocker/6.png" alt="Step 6" width={600} height={400} />
-</div>
 ### GITHUB_TOKEN
 - 访问[GitHub令牌设置](https://github.com/settings/tokens/new)创建一个新的访问令牌，有效期建议设置为永久，**_注意：权限仅需勾选 workflow 即可_**
 #### 过程截图
@@ -104,12 +36,97 @@ TENCENTCLOUD_PASSWORD=xxx # 腾讯云容器镜像服务密码
   <Image src="/githubToken/4.png" alt="Step 4" width={600} height={400} />
 </div>
 
-## 配置环境变量
+### HUAWEICLOUD_AK
+- 访问[华为云控制台](https://console.huaweicloud.com/iam/)获取ak，创建一个新的“用户组”并只授予**SWR FullAccess**权限，然后在这个用户组下创建一个新的“用户”，**_注意：创建时只需授予 SWR FullAccess 权限即可_**
+- **_注：ak 和 sk 创建后，立刻找地方保存，如果错过保存，重新创建获取。_**
+#### 过程截图
+##### 创建用户组
+<div style={{ marginBottom: '20px' }}>
+  <p>过程一</p>
+  <Image src="/huaweiSecret/1.png" alt="Step 1" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程二</p>
+  <Image src="/huaweiSecret/2.png" alt="Step 2" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程三</p>
+  <Image src="/huaweiSecret/3.png" alt="Step 3" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程四</p>
+  <Image src="/huaweiSecret/4.png" alt="Step 4" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程五</p>
+  <Image src="/huaweiSecret/5.png" alt="Step 5" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程六</p>
+  <Image src="/huaweiSecret/6.png" alt="Step 6" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程七</p>
+  <Image src="/huaweiSecret/7.png" alt="Step 7" width={600} height={400} />
+</div>
+##### 创建用户
+<div style={{ marginBottom: '20px' }}>
+  <p>过程八</p>
+  <Image src="/huaweiSecret/8.png" alt="Step 8" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程九</p>
+  <Image src="/huaweiSecret/9.png" alt="Step 9" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程十</p>
+  <Image src="/huaweiSecret/10.png" alt="Step 10" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程十一</p>
+  <Image src="/huaweiSecret/11.png" alt="Step 11" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程十二</p>
+  <Image src="/huaweiSecret/12.png" alt="Step 12" width={600} height={400} />
+</div>
+
+### HUAWEICLOUD_SK
+- 获取sk，**_注意：与HUAWEICLOUD_AK配套使用，同样只需授予 SWR FullAccess 权限_**
+
+### NEXT_PUBLIC_HUAWEICLOUD_USERNAME
+- **_需要先实名认证_**
+- 访问[华为云容器镜像服务](https://console.huaweicloud.com/swr)获取**长期有效登录指令**，通过上一步获取的AK和SK获取，只需要-u的值，也就是登录用户名
+#### 过程截图
+<div style={{ marginBottom: '20px' }}>
+  <p>过程一</p>
+  <Image src="/huaweiDocker/1.png" alt="Step 1" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程二</p>
+  <Image src="/huaweiDocker/2.png" alt="Step 2" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程三</p>
+  <Image src="/huaweiDocker/3.png" alt="Step 3" width={600} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <p>过程四</p>
+  <Image src="/huaweiDocker/4.png" alt="Step 4" width={600} height={400} />
+</div>
+
+
+### HUAWEICLOUD_PASSWORD
+- 访问[华为云容器镜像服务](https://console.huaweicloud.com/swr)获取**长期有效登录指令**，通过上一步获取的AK和SK获取，只需要-p的值，也就是登录密码
+
+
+## 修改 Vercel 环境变量
 - 打开 [Vercel](https://vercel.com/)
-- 在Vercel项目控制面板中，找到一键部署后的项目，进入 Settings → Environment Variables 页面
-- 将上述获取的所有环境变量依次添加到配置中
-- 添加完成后，点击 Redeploy 重新部署项目
+- 在 Vercel 项目控制面板中，找到一键部署后的项目，进入 Settings → Environment Variables 页面
+- 找到需要修改的环境变量，直接修改
+- 修改完成后，点击 Redeploy 重新部署项目
 - 部署完成后即可开始使用系统，尽情体验吧！
+
 ### 过程截图
 <div style={{ marginBottom: '20px' }}>
   <p>过程一</p>

@@ -1,3 +1,16 @@
+import Image from 'next/image';
+
 ## 配置自动更新
 
-路径：进入"GitHub 配置"菜单下的"配置自动更新"，填写您在 Vercel 上部署的项目名称（例如：pocker）。该项目名可在 Vercel 控制台查看，它对应着您 GitHub 账号下的一个私有仓库。
+1. 打开你在 Vercel 上部署后获得的项目地址，进入"GitHub 配置"菜单下的"配置自动更新"，填写您在 Vercel 上部署的项目名称（例如：pocker）。该项目名可在 Vercel 控制台查看，它对应着您 GitHub 账号下的一个私有仓库。
+<div style={{ marginBottom: '20px' }}>
+  <Image src="/projectShots/6.png" alt="Step 6" width={800} height={400} />
+</div>
+2. 打开 Vercel 项目控制面板，进入 Settings → Environment → 点击 Production，跳转后把 Branch Tracking 的 master 改成 main ，最后保存
+<div style={{ marginBottom: '20px' }}>
+  <Image src="/vercelEnv/5.png" alt="Step 5" width={800} height={400} />
+</div>
+<div style={{ marginBottom: '20px' }}>
+  <Image src="/vercelEnv/6.png" alt="Step 6" width={800} height={400} />
+</div>
+3. 完成以上配置后，系统将自动同步最新功能和更新
